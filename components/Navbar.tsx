@@ -11,7 +11,7 @@ const Navbar = () => {
                     <span className="cursor-pointer active:text-gray-400">My projects</span>
                     <span className="cursor-pointer active:text-gray-400">Experience</span>
                 </div>
-                <Button children="Get in touch" />
+                <Button>Get in touch</Button>
             </div>
         </nav>
     )

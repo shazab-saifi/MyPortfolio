@@ -10,7 +10,7 @@ const SkeletonOne = () => {
             </p>
             <p className="font-normal text-base text-white"></p>
             <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-                It's a digital canvas website where people can come and start drawing shapes and visualize their ideas on the canvas. I'm still working on this; it's in development.
+                It&apos;s a digital canvas website where people can come and start drawing shapes and visualize their ideas on the canvas. I&apos;m still working on this; it&apos;s in development.
             </p>
             <Link href="https://www.figma.com/design/ktXDLtIUlDb76tnnZaTATB/WireSketch?node-id=18-80&t=A8hdx4ErYZ9Vs1wJ-1">
                 <button className="px-4 py-2 rounded-md border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200 cursor-pointer hover:bg-gray-200 active:bg-gray-300">
@@ -29,7 +29,7 @@ const SkeletonTwo = () => {
             </p>
             <p className="font-normal text-base text-white"></p>
             <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-                A social platform for memes where people can create, share, like, and more—just like a social website. It's a group project, and it's in development. I designed the entire prototype, I Made the sidebar in development.
+                A social platform for memes where people can create, share, like, and more—just like a social website. It&apos;s a group project, and it&apos;s in development. I designed the entire prototype, I Made the sidebar in development.
             </p>
             <Link href="https://www.figma.com/design/JLPg9XdjFLbVG7lA0mlbuO/LetterGen?node-id=0-1&t=A8hdx4ErYZ9Vs1wJ-1">
                 <button className="px-4 py-2 rounded-md border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200 cursor-pointer hover:bg-gray-200 active:bg-gray-300">
@@ -47,7 +47,7 @@ const SkeletonThree = () => {
             </p>
             <p className="font-normal text-base text-white"></p>
             <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-                It's an AI-powered cover letter generator. Users can provide information about themselves and the job they're applying for, and the AI will generate a cover letter based on the provided details. The user can then download the cover letter in PDF format. It's a group project, and I designed the entire prototype.
+                It&apos;s an AI-powered cover letter generator. Users can provide information about themselves and the job they&apos;re applying for, and the AI will generate a cover letter based on the provided details. The user can then download the cover letter in PDF format. It&apos;s a group project, and I designed the entire prototype.
             </p>
             <div className='space-x-4'>
                 <Link href="https://www.figma.com/design/JLPg9XdjFLbVG7lA0mlbuO/LetterGen?node-id=0-1&t=A8hdx4ErYZ9Vs1wJ-1">
@@ -72,7 +72,7 @@ const SkeletonFour = () => {
             </p>
             <p className="font-normal text-base text-white"></p>
             <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-                It was an assignment for an internship at Periskope. It's a platform where users can create chat rooms and send messages to each other. It only includes the features that were specified in the assignment.
+                It was an assignment for an internship at Periskope. It&apos;s a platform where users can create chat rooms and send messages to each other. It only includes the features that were specified in the assignment.
             </p>
             <Link href="https://periskopeassignment.vercel.app/">
                 <button className="px-4 py-2 rounded-md border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200 cursor-pointer hover:bg-gray-200 active:bg-gray-300">

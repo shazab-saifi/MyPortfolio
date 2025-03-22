@@ -1,7 +1,7 @@
 import { BackgroundBeams } from "./Background-beam"
 import BackgroundGradient from "./BackgroundGradient"
 import HeroSection from "./HeroSection"
-import Navbar from "./Navbar"
+// import Navbar from "./Navbar"
 import PorjectsSection from "./PorjectsSection"
 import SkillsSection from "./SkillsSection"
 
