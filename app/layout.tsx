@@ -20,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/myavatar.svg" type="image/svg" />
+      </head>
       <body
         className={`${montaga.className} antialiased`}
       >
