@@ -68,7 +68,7 @@ const HeroSection = () => {
                   className="cursor-pointer"
                 />
               </Link>
-              <h4 className="opacity-70">shazebsaifi92@gmail.com</h4>
+              <h4 className="opacity-70">shazabdev@gmail.com</h4>
             </motion.div>
           </div>
         </div>

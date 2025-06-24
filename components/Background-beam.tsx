@@ -61,7 +61,7 @@ export const BackgroundBeams = React.memo(
         return (
             <div
                 className={cn(
-                    "fixed overflow-y-auto inset-0 -z-10 flex h-screen w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px]",
+                    "absolute overflow-y-auto inset-0 -z-10 flex h-screen w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px]",
                     className,
                 )}
             >
