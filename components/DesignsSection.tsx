@@ -46,7 +46,7 @@ const DesignsSection = () => {
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 0.3, delay: 0.3 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
         className="text-2xl font-semibold"
       >
@@ -56,7 +56,7 @@ const DesignsSection = () => {
         <motion.div
           initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
           whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 0.3, delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
           viewport={{ once: true }}
           key={idx}
           className="space-y-4"
@@ -76,12 +76,10 @@ const DesignsSection = () => {
               </Link>
               <p className="text-neutral-400 max-w-xl">{design.description}</p>
               <div className="flex gap-2 mt-2">
-                <h3 className="font-semibold text-sm">Tech Stack:</h3>
+                <h3 className="font-semibold">Design Tool:</h3>
                 <div className="flex gap-2 text-neutral-400">
                   {design.tools.map((item, idx) => (
-                    <span className="text-sm" key={idx}>
-                      {item},
-                    </span>
+                    <span key={idx}>{item}</span>
                   ))}
                 </div>
               </div>

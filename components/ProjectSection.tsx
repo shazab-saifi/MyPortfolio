@@ -45,7 +45,7 @@ const ProjectSection = () => {
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 0.3, delay: 0.3 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
         viewport={{ once: true }}
         className="text-2xl font-semibold"
       >
@@ -55,7 +55,7 @@ const ProjectSection = () => {
         <motion.div
           initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
           whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 0.3, delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.5 }}
           viewport={{ once: true }}
           key={idx}
           className="space-y-4"
@@ -83,12 +83,10 @@ const ProjectSection = () => {
               </div>
               <p className="text-neutral-400 max-w-xl">{project.description}</p>
               <div className="flex gap-2 mt-2">
-                <h3 className="font-semibold text-sm">Tech Stack:</h3>
+                <h3 className="font-semibold">Tech Stack:</h3>
                 <div className="flex gap-2 text-neutral-400">
                   {project.techStack.map((item, idx) => (
-                    <span className="text-sm" key={idx}>
-                      {item},
-                    </span>
+                    <span key={idx}>{item},</span>
                   ))}
                 </div>
               </div>

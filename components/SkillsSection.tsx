@@ -1,48 +1,48 @@
-"use client"
+"use client";
 
 import { motion } from "motion/react";
 
 const SkillsSection = () => {
+  const skills = [
+    "JavaScript",
+    "TypeScript",
+    "React.js",
+    "Next.js",
+    "Tailwindcss",
+    "Figma",
+    "Node.js",
+    "Express.js",
+    "Mongodb",
+    "Postgresql",
+  ];
+
   return (
-    <div className="mt-16 w-full flex items-center justify-center">
-      <div className="space-y-4 max-w-[600px]">
-        <motion.h1
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 100 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-2xl"
-        >
-          My Skills
-        </motion.h1>
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 100 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >cannot be a descendant of
-          Frontend: <br /><span className="opacity-70">React.js, Next.js, Redux, Recoil, TypeScript, Tailwind CSS
-            (Custom Breakpoints, Animations), Responsive Design.</span>
-        </motion.div>
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 100 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          Backend: <br /><span className="opacity-70">Node.js, Express.js, MongoDB, PostgreSQL, Prisma,
-            RESTful APIs.</span>
-        </motion.div>
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 100 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}>
-          Tools & Workflow: <br /><span className="opacity-70">Git, GitHub, Linux (Ubuntu), WSL, Zsh.</span>
-        </motion.div>
+    <div className="my-16 w-full gap-4 flex flex-col max-w-2xl">
+      <motion.h1
+        initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
+        whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="text-2xl font-semibold"
+      >
+        Skills —
+      </motion.h1>
+      <div className="flex flex-wrap gap-2 max-w-full">
+        {skills.map((skill, idx) => (
+          <motion.span
+            initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            viewport={{ once: true }}
+            key={idx}
+            className="px-2 py-1 rounded-md bg-neutral-900 border border-neutral-800"
+          >
+            {skill}
+          </motion.span>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SkillsSection
+export default SkillsSection;

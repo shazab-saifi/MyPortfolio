@@ -60,38 +60,27 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="mt-10 max-w-[600px]">
-          <div>
-            <motion.p
-              initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-              whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: true }}
-            >
+          <motion.div
+            initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <motion.p>
               Hey, I&apos;m Shazab Saifi, a passionate Design engineer. yes, I
               can design user interface and turn them into real life products.
             </motion.p>
             <br />
-            <motion.p
-              initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-              whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
+            <p>
               I find desining and engineering to be a form of art. And I like
               art.
-            </motion.p>
+            </p>
             <br />
-            <motion.p
-              initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-              whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="inline-flex gap-1 items-center"
-            >
+            <p className="inline-flex gap-1 items-center">
               Mostly you&apos;ll find me on
               <Link href="https://x.com/shazabsaifi_s9">𝕏</Link>
-            </motion.p>
-          </div>
+            </p>
+          </motion.div>
         </div>
       </div>
     </main>
