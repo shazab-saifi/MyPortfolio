@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Montaga } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
-const montaga = Montaga({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap'
+const geist = Geist({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +23,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/myavatar.svg" type="image/svg" />
       </head>
-      <body
-        className={`${montaga.className} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${geist.className} antialiased`}>{children}</body>
     </html>
   );
 }

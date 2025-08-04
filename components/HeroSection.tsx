@@ -1,94 +1,101 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import myavatar from "@/public/myavatar.jpg"
-import { VscGithubInverted } from "react-icons/vsc";
+import Image from "next/image";
 import Link from "next/link";
-import { LettersPullUp } from "./LettersPullUp";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
+import AnimateText from "./AnimateText";
 
 const HeroSection = () => {
-
   return (
     <main className="w-full flex items-center justify-center mt-24">
       <div className="w-fit flex flex-col">
-        <div className="space-y-4 sm:space-x-4 flex flex-col sm:flex-row sm:items-center">
+        <div className="space-y-4 sm:space-x-6 flex flex-col sm:flex-row sm:items-center">
           <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 100 }}
-            transition={{ duration: 0.5 }}
+            initial={{ y: 30, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
-            className="relative w-32 sm:w-auto"
+            className="w-32 sm:w-auto"
           >
             <Link href="https://github.com/shazab-saifi">
               <Image
-                src={myavatar}
+                width={128}
+                height={128}
+                src="/stewie-music.jpeg"
                 alt="my avatar"
                 className="w-32 sm:w-[200px] active:ring-white ring-2 cursor-pointer rounded-2xl"
               />
-              <VscGithubInverted
-                className="w-4 sm:w-6 absolute top-4 right-4"
-              />
             </Link>
           </motion.div>
-          <div>
-            <LettersPullUp
+          <div className="flex flex-col gap-2">
+            <AnimateText
               text="Hi, I'm Shazab Saifi"
               className="md:text-5xl text-4xl"
             />
-            <LettersPullUp
-              text="I'm a developer who can design!"
-              className="text-base"
+            <AnimateText
+              delay={0.2}
+              text="I'm a 20y/o developer who can design"
+              className="text-2xl"
             />
             <motion.div
-              initial={{ y: 100, opacity: 0 }}
+              initial={{ y: 10, opacity: 0 }}
               whileInView={{ y: 0, opacity: 100 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
               viewport={{ once: true }}
               className="flex space-x-4 mt-4"
             >
               <Link href="https://x.com/shazabsaifi_s9">
-                <FaSquareXTwitter
-                  size={24}
-                  className="cursor-pointer"
-                />
+                <FaSquareXTwitter size={24} className="cursor-pointer" />
               </Link>
               <Link href="https://www.instagram.com/shahzaibb.s/">
-                <FaSquareInstagram
-                  size={24}
-                  className="cursor-pointer"
-                />
+                <FaSquareInstagram size={24} className="cursor-pointer" />
               </Link>
               <Link href="https://github.com/shazab-saifi">
-                <SiGithub
-                  size={24}
-                  className="cursor-pointer"
-                />
+                <SiGithub size={24} className="cursor-pointer" />
               </Link>
-              <h4 className="opacity-70">shazabdev@gmail.com</h4>
             </motion.div>
           </div>
         </div>
-        <div className="mt-16 max-w-[600px]">
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 100 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <p>Hey! I’m a passionate Full Stack Developer who loves building cool and efficient web applications. I work mainly with the MERN stack (MongoDB, Express.js, React, Node.js) and have been diving deep into JavaScript, React, TypeScript, Redux, and Tailwind CSS to create dynamic and responsive apps.</p><br />
-
-            <p>I enjoy the challenge of solving tricky coding problems and making sure my projects are both clean and user-friendly. Lately, I’ve been getting into Machine Learning and React Native because I’m always excited to expand my skill set and try out new technologies.</p><br />
-
-            <p>My big goal? To become a senior software developer and keep leveling up my skills. When I’m not coding, you’ll probably find me listening to Hans Zimmer’s music, hitting the gym, or learning a new language just for fun.</p>
-          </motion.div>
+        <div className="mt-10 max-w-[600px]">
+          <div>
+            <motion.p
+              initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.3 }}
+              viewport={{ once: true }}
+            >
+              Hey, I&apos;m Shazab Saifi, a passionate Design engineer. yes, I
+              can design user interface and turn them into real life products.
+            </motion.p>
+            <br />
+            <motion.p
+              initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              I find desining and engineering to be a form of art. And I like
+              art.
+            </motion.p>
+            <br />
+            <motion.p
+              initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="inline-flex gap-1 items-center"
+            >
+              Mostly you&apos;ll find me on
+              <Link href="https://x.com/shazabsaifi_s9">𝕏</Link>
+            </motion.p>
+          </div>
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
