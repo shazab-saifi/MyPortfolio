@@ -45,7 +45,7 @@ const ProjectSection = () => {
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 0.3, delay: 0.4 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
         className="text-2xl font-semibold"
       >
@@ -56,7 +56,7 @@ const ProjectSection = () => {
           <motion.div
             initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
             whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.3, delay: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
             viewport={{ once: true }}
             key={idx}
             className="space-y-4"

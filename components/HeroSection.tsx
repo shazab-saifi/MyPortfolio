@@ -43,7 +43,7 @@ const HeroSection = () => {
             <motion.div
               initial={{ y: 10, opacity: 0 }}
               whileInView={{ y: 0, opacity: 100 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               viewport={{ once: true }}
               className="flex space-x-4 mt-4"
             >
@@ -63,7 +63,7 @@ const HeroSection = () => {
           <motion.div
             initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
             whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
             className="space-y-2 text-wrap"
           >

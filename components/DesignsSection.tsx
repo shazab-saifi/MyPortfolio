@@ -46,7 +46,7 @@ const DesignsSection = () => {
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 0.3, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
         viewport={{ once: true }}
         className="text-2xl font-semibold"
       >
@@ -57,7 +57,7 @@ const DesignsSection = () => {
           <motion.div
             initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
             whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
             key={idx}
             className="flex flex-col justify-between"
