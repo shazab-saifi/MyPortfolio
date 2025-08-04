@@ -1,5 +1,6 @@
 import HeroSection from "./HeroSection";
 import ProjectSection from "./ProjectSection";
+import DesignsSection from "./DesignsSection";
 
 const Landing = () => {
   return (
@@ -7,6 +8,7 @@ const Landing = () => {
       <div>
         <HeroSection />
         <ProjectSection />
+        <DesignsSection />
       </div>
     </div>
   );

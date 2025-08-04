@@ -4,6 +4,7 @@ import Link from "next/link";
 import { LuExternalLink } from "react-icons/lu";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { SiGithub } from "react-icons/si";
 
 const ProjectSection = () => {
   const projects = [
@@ -68,16 +69,26 @@ const ProjectSection = () => {
               className="size-12"
             />
             <div className="flex flex-col">
-              <Link href={project.url} className="flex items-center gap-2">
-                <h3 className="text-lg font-semibold">{project.name}</h3>
-                <LuExternalLink className="md:opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+              <div className="w-full flex justify-between">
+                <Link
+                  href={project.url}
+                  className="flex items-center gap-2 w-fit"
+                >
+                  <h3 className="text-lg font-semibold">{project.name}</h3>
+                  <LuExternalLink className="md:opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <Link href={project.githubLink}>
+                  <SiGithub />
+                </Link>
+              </div>
               <p className="text-neutral-400 max-w-xl">{project.description}</p>
               <div className="flex gap-2 mt-2">
-                <h3 className="font-semibold">Tech Stack:</h3>
+                <h3 className="font-semibold text-sm">Tech Stack:</h3>
                 <div className="flex gap-2 text-neutral-400">
                   {project.techStack.map((item, idx) => (
-                    <span key={idx}>{item},</span>
+                    <span className="text-sm" key={idx}>
+                      {item},
+                    </span>
                   ))}
                 </div>
               </div>
