@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/myavatar.svg" type="image/svg" />
+        <link rel="icon" href="/stewie-music.jpeg" type="image/jpeg" />
       </head>
       <body className={`${geist.className} antialiased`}>{children}</body>
     </html>

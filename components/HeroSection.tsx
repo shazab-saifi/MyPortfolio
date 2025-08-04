@@ -10,7 +10,7 @@ import AnimateText from "./AnimateText";
 
 const HeroSection = () => {
   return (
-    <main className="w-full flex items-center justify-center mt-24">
+    <main className="mt-24">
       <div className="w-fit flex flex-col">
         <div className="space-y-4 sm:space-x-6 flex flex-col sm:flex-row sm:items-center">
           <motion.div

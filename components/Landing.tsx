@@ -1,19 +1,13 @@
-// import { BackgroundBeams } from "./Background-beam";
-// import BackgroundGradient from "./BackgroundGradient";
 import HeroSection from "./HeroSection";
-// import Navbar from "./Navbar"
-// import PorjectsSection from "./PorjectsSection";
-import SkillsSection from "./SkillsSection";
+import ProjectSection from "./ProjectSection";
 
 const Landing = () => {
   return (
-    <div className="sm:px-20 px-4">
-      {/* <BackgroundBeams /> */}
-      {/* <Navbar /> */}
-      <HeroSection />
-      {/* <BackgroundGradient /> */}
-      <SkillsSection />
-      {/* <PorjectsSection /> */}
+    <div className="sm:px-20 px-4 w-full min-h-screen flex flex-col items-center">
+      <div>
+        <HeroSection />
+        <ProjectSection />
+      </div>
     </div>
   );
 };
