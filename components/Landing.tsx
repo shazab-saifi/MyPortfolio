@@ -5,8 +5,8 @@ import SkillsSection from "./SkillsSection";
 
 const Landing = () => {
   return (
-    <div className="sm:px-20 px-4 w-full min-h-screen flex flex-col items-center">
-      <div>
+    <div className="sm:px-20 px-4 w-full min-h-screen flex flex-wrap flex-col items-center bg-neutral-950">
+      <div className="max-w-2xl">
         <HeroSection />
         <ProjectSection />
         <DesignsSection />

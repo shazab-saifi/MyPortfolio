@@ -52,42 +52,53 @@ const DesignsSection = () => {
       >
         Designs —
       </motion.h1>
-      {designs.map((design, idx) => (
-        <motion.div
-          initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-          whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 0.3, delay: 0.3 }}
-          viewport={{ once: true }}
-          key={idx}
-          className="space-y-4"
-        >
-          <div className="group flex gap-4">
-            <Image
-              src={design.image}
-              alt={design.title}
-              width={48}
-              height={48}
-              className="size-12"
-            />
-            <div className="flex flex-col">
-              <Link href={design.url} className="flex items-center gap-2">
-                <h3 className="text-lg font-semibold">{design.title}</h3>
-                <LuExternalLink className="md:opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
-              <p className="text-neutral-400 max-w-xl">{design.description}</p>
-              <div className="flex gap-2 mt-2">
-                <h3 className="font-semibold">Design Tool:</h3>
-                <div className="flex gap-2 text-neutral-400">
-                  {design.tools.map((item, idx) => (
-                    <span key={idx}>{item}</span>
-                  ))}
+      <div className="flex flex-col gap-6">
+        {designs.map((design, idx) => (
+          <motion.div
+            initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            viewport={{ once: true }}
+            key={idx}
+            className="flex flex-col justify-between"
+          >
+            <div className="flex flex-col sm:flex-row gap-4 items-start">
+              <Image
+                src={design.image}
+                alt={design.title}
+                width={48}
+                height={48}
+                className="size-12 flex-shrink-0"
+              />
+              <div className="flex flex-col flex-1">
+                <Link
+                  href={design.url}
+                  className="flex items-center gap-2 w-fit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h3 className="text-lg font-semibold">{design.title}</h3>
+                  <LuExternalLink className="md:opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <p className="text-neutral-400 max-w-full text-wrap mt-1 text-sm sm:text-base">
+                  {design.description}
+                </p>
+                <div className="flex gap-2 mt-2 flex-wrap items-center">
+                  <h3 className="font-semibold text-sm sm:text-base">
+                    Design Tool:
+                  </h3>
+                  <div className="flex gap-2 text-neutral-400 text-sm sm:text-base">
+                    {design.tools.map((item, idx) => (
+                      <span key={idx}>{item}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-full h-[1px] bg-neutral-800"></div>
-        </motion.div>
-      ))}
+            <div className="w-full h-[1px] bg-neutral-800 mt-4 sm:mt-6"></div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };
