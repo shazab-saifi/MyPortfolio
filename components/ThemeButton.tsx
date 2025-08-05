@@ -34,10 +34,13 @@ const ThemeButton = () => {
       lottieRef.current?.goToAndStop(100, true);
       document.documentElement.classList.add("dark");
       setIsDark(false);
-    } else {
+    } else if (previous === false) {
       lottieRef.current?.goToAndStop(0, true);
       document.documentElement.classList.remove("dark");
       setIsDark(true);
+    } else {
+      lottieRef.current?.goToAndStop(100, true);
+      document.documentElement.classList.add("dark");
     }
   }, []);
 
