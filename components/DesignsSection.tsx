@@ -42,13 +42,13 @@ const DesignsSection = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-4 mt-12">
+    <div className="mt-12 flex flex-col gap-4">
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.3, delay: 0.1 }}
         viewport={{ once: true }}
-        className="text-2xl font-semibold"
+        className="text-2xl font-semibold text-neutral-800 transition-colors duration-300 dark:text-white"
       >
         Designs —
       </motion.h1>
@@ -62,7 +62,7 @@ const DesignsSection = () => {
             key={idx}
             className="flex flex-col justify-between"
           >
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
+            <div className="flex flex-col items-start gap-4 sm:flex-row">
               <Image
                 src={design.image}
                 alt={design.title}
@@ -70,24 +70,26 @@ const DesignsSection = () => {
                 height={48}
                 className="size-12 flex-shrink-0"
               />
-              <div className="flex flex-col flex-1">
+              <div className="flex flex-1 flex-col">
                 <Link
                   href={design.url}
-                  className="flex items-center gap-2 w-fit"
+                  className="flex w-fit items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h3 className="text-lg font-semibold">{design.title}</h3>
-                  <LuExternalLink className="md:opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-lg font-semibold text-neutral-800 transition-colors duration-300 dark:text-white">
+                    {design.title}
+                  </h3>
+                  <LuExternalLink className="transition-opacity group-hover:opacity-100 md:opacity-0" />
                 </Link>
-                <p className="text-neutral-400 max-w-full text-wrap mt-1 text-sm sm:text-base">
+                <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
                   {design.description}
                 </p>
-                <div className="flex gap-2 mt-2 flex-wrap items-center">
-                  <h3 className="font-semibold text-sm sm:text-base">
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <h3 className="text-sm font-semibold text-neutral-800 transition-colors duration-300 sm:text-base dark:text-white">
                     Design Tool:
                   </h3>
-                  <div className="flex gap-2 text-neutral-400 text-sm sm:text-base">
+                  <div className="flex gap-2 text-sm text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
                     {design.tools.map((item, idx) => (
                       <span key={idx}>{item}</span>
                     ))}
@@ -95,7 +97,9 @@ const DesignsSection = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full h-[1px] bg-neutral-800 mt-4 sm:mt-6"></div>
+            {!(designs.length - 1 === idx) && (
+              <div className="mt-4 h-[1px] w-full bg-neutral-300 transition-colors duration-300 sm:mt-6 dark:bg-neutral-800"></div>
+            )}
           </motion.div>
         ))}
       </div>

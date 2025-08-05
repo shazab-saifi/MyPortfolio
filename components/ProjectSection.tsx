@@ -41,13 +41,13 @@ const ProjectSection = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-4 mt-12">
+    <div className="mt-12 flex flex-col gap-4">
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
-        className="text-2xl font-semibold"
+        className="text-2xl font-semibold text-neutral-800 transition-colors duration-300 dark:text-white"
       >
         Projects —
       </motion.h1>
@@ -61,7 +61,7 @@ const ProjectSection = () => {
             key={idx}
             className="space-y-4"
           >
-            <div className="group flex flex-col sm:flex-row gap-4 sm:items-start">
+            <div className="group flex flex-col gap-4 sm:flex-row sm:items-start">
               <Image
                 src={project.image}
                 alt={project.name}
@@ -69,34 +69,36 @@ const ProjectSection = () => {
                 height={48}
                 className="size-12 flex-shrink-0"
               />
-              <div className="flex flex-col flex-1">
-                <div className="w-full flex flex-row justify-between sm:gap-0">
+              <div className="flex flex-1 flex-col">
+                <div className="flex w-full flex-row justify-between sm:gap-0">
                   <Link
                     href={project.url}
-                    className="flex items-center gap-2 w-fit"
+                    className="flex w-fit items-center gap-2"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <h3 className="text-lg font-semibold">{project.name}</h3>
-                    <LuExternalLink className="md:opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <h3 className="text-lg font-semibold text-neutral-800 transition-colors duration-300 dark:text-white">
+                      {project.name}
+                    </h3>
+                    <LuExternalLink className="transition-opacity group-hover:opacity-100 md:opacity-0" />
                   </Link>
                   <Link
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center w-fit"
+                    className="flex w-fit items-center"
                   >
-                    <SiGithub className="sm:size-5" />
+                    <SiGithub className="text-neutral-800 transition-colors duration-300 sm:size-5 dark:text-white" />
                   </Link>
                 </div>
-                <p className="text-neutral-400 max-w-full text-wrap mt-1 text-sm sm:text-base">
+                <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
                   {project.description}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-4 flex-wrap">
-                  <h3 className="font-semibold text-sm sm:text-base">
+                <div className="mt-4 flex flex-col flex-wrap gap-1 sm:flex-row sm:gap-2">
+                  <h3 className="text-sm font-semibold text-neutral-800 transition-colors duration-300 sm:text-base dark:text-white">
                     Tech Stack:
                   </h3>
-                  <div className="flex flex-wrap space-x-2 max-w-full text-neutral-400 text-sm sm:text-base">
+                  <div className="flex max-w-full flex-wrap space-x-2 text-sm text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
                     {project.techStack.map((item, idx) => (
                       <span key={idx}>
                         {item}
@@ -107,7 +109,9 @@ const ProjectSection = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full h-[1px] bg-neutral-800"></div>
+            {!(projects.length - 1 === idx) && (
+              <div className="h-[1px] w-full bg-neutral-300 transition-colors duration-300 dark:bg-neutral-800"></div>
+            )}
           </motion.div>
         ))}
       </div>
