@@ -35,7 +35,7 @@ const SkillsSection = () => {
             transition={{ duration: 0.3, delay: 0.3 }}
             viewport={{ once: true }}
             key={idx}
-            className="rounded-md border border-neutral-300 bg-neutral-100 px-2 py-1 text-neutral-800 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
+            className="rounded-md border border-blue-100 bg-blue-50 px-2 py-1 text-neutral-800 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
           >
             {skill}
           </motion.span>

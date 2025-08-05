@@ -34,7 +34,7 @@ const ThemeButton = () => {
   }, []);
 
   return (
-    <button className="absolute top-10 right-0 cursor-pointer">
+    <button className="absolute top-15 right-0 cursor-pointer sm:top-10">
       <Lottie
         onClick={handleToggle}
         lottieRef={lottieRef}
