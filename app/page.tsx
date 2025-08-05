@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/OgImage.svg",
+        url: "/ogimage.png",
         alt: "Shazab Saifi OG Image",
       },
     ],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "I'm a design engineer who crafts user interfaces and writes code. I blend design and development to create seamless, engaging digital experiences.",
     images: [
       {
-        url: "/OgImage.svg",
+        url: "/ogimage.png",
         alt: "Shazab Saifi OG Image",
       },
     ],
