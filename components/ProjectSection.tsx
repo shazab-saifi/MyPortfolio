@@ -18,6 +18,7 @@ const ProjectSection = () => {
       techStack: [
         "React.js",
         "Next.js",
+        "Zustand",
         "Tailwind.css",
         "React query",
         "Prisma",
