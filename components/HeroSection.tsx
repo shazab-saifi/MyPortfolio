@@ -36,8 +36,7 @@ const HeroSection = () => {
               className="text-3xl text-neutral-800 transition-colors duration-300 sm:text-4xl md:text-5xl dark:text-white"
             />
             <AnimateText
-              delay={0.2}
-              text="I'm a 20y/o developer who can also design"
+              text="20y/o developer & designer"
               className="text-xl text-neutral-800 transition-colors duration-300 sm:text-2xl dark:text-white"
             />
             <motion.div
