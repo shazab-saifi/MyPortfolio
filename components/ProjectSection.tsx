@@ -1,65 +1,66 @@
-"use client";
+'use client'
 
-import { LuExternalLink } from "react-icons/lu";
-import { motion } from "motion/react";
-import Image from "next/image";
-import { SiGithub } from "react-icons/si";
-import Badge from "./Badge";
+import { LuExternalLink } from 'react-icons/lu'
+import { motion } from 'motion/react'
+import Image from 'next/image'
+import { SiGithub } from 'react-icons/si'
+import Badge from './Badge'
 
 const ProjectSection = () => {
   const projects = [
     {
-      name: "Quartz UI",
-      image: "https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg",
+      name: 'Quartz UI',
+      image:
+        'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg',
       description:
-        "Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.",
+        'Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.',
       inDevelopment: true,
       techStack: [
-        "React.js",
-        "Next.js",
-        "Tailwind.css",
-        "Motion.dev",
-        "Storybook.js"
+        'React.js',
+        'Next.js',
+        'Tailwind.css',
+        'Motion.dev',
+        'Storybook.js',
       ],
     },
     {
-      name: "Pixory",
-      image: "/pixoryIcon.png",
+      name: 'Pixory',
+      image: '/pixoryIcon.png',
       description:
-        "Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, user authentication, and personalized collections.",
-      url: "https://pixory-liard.vercel.app",
-      githubLink: "https://github.com/shazab-saifi/Pixory",
+        'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, user authentication, and personalized collections.',
+      url: 'https://pixory-liard.vercel.app',
+      githubLink: 'https://github.com/shazab-saifi/Pixory',
       techStack: [
-        "React.js",
-        "Next.js",
-        "Zustand",
-        "Tailwind.css",
-        "React query",
-        "Prisma",
-        "neon.tech",
+        'React.js',
+        'Next.js',
+        'Zustand',
+        'Tailwind.css',
+        'React query',
+        'Prisma',
+        'neon.tech',
       ],
     },
     {
-      name: "Periskope Assignment",
-      image: "/periskopeLogo.png",
+      name: 'Periskope Assignment',
+      image: '/periskopeLogo.png',
       description:
-        "A real-time group chat app built for a Periskope internship assignment. Users can create rooms and chat instantly.",
-      url: "https://periskopeassignment.vercel.app",
-      githubLink: "https://github.com/shazab-saifi/periskopeassignment",
+        'A real-time group chat app built for a Periskope internship assignment. Users can create rooms and chat instantly.',
+      url: 'https://periskopeassignment.vercel.app',
+      githubLink: 'https://github.com/shazab-saifi/periskopeassignment',
       techStack: [
-        "React.js",
-        "Next.js",
-        "Tailwind.css",
-        "Supabase realtime db",
+        'React.js',
+        'Next.js',
+        'Tailwind.css',
+        'Supabase realtime db',
       ],
     },
-  ];
+  ]
 
   return (
-    <div className="mt-12 md:mt-16 flex flex-col gap-4 md:gap-8">
+    <div className="mt-12 flex flex-col gap-4 md:mt-16 md:gap-8">
       <motion.h1
-        initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-        whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+        initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
+        whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
         className="text-2xl font-semibold text-neutral-800 transition-colors duration-300 dark:text-white"
@@ -69,8 +70,8 @@ const ProjectSection = () => {
       <div className="flex flex-col gap-8">
         {projects.map((project, idx) => (
           <motion.div
-            initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-            whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
+            whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
             transition={{ duration: 0.3, delay: 0.4 }}
             viewport={{ once: true }}
             key={idx}
@@ -86,12 +87,23 @@ const ProjectSection = () => {
               />
               <div className="flex flex-1 flex-col">
                 <div className="flex w-full flex-row justify-between sm:gap-0">
-                  <div className="flex items-center gap-2 group hover:underline">
+                  <div
+                    className={`group flex items-center gap-2 ${
+                      project.inDevelopment
+                        ? ''
+                        : 'cursor-pointer hover:underline'
+                    }`}
+                  >
                     <h3 className="text-lg font-semibold text-neutral-800 transition-colors duration-300 dark:text-white">
                       {project.name}
                     </h3>
                     {project.inDevelopment && (
-                      <Badge variant="warning">In Development</Badge>
+                      <Badge
+                        variant="warning"
+                        className="dark:bg-yellow-900/50 dark:text-yellow-400"
+                      >
+                        In Development
+                      </Badge>
                     )}
                     {project.url && (
                       <a
@@ -126,7 +138,7 @@ const ProjectSection = () => {
                     {project.techStack.map((item, idx) => (
                       <span key={idx}>
                         {item}
-                        {idx !== project.techStack.length - 1 ? "," : ""}
+                        {idx !== project.techStack.length - 1 ? ',' : ''}
                       </span>
                     ))}
                   </div>
@@ -140,7 +152,7 @@ const ProjectSection = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectSection;
+export default ProjectSection

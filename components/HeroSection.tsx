@@ -1,13 +1,12 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "motion/react";
-import AnimateText from "./AnimateText";
+import Image from 'next/image'
+import Link from 'next/link'
+import Badge from './Badge'
 
 const HeroSection = () => {
   return (
-    <main className="mt-16 max-w-full ">
+    <main className="mt-16 max-w-full">
       <div className="flex w-fit flex-col">
         <div className="flex items-center gap-4">
           <Image
@@ -15,27 +14,30 @@ const HeroSection = () => {
             width={128}
             src="/stewie-music.jpeg"
             alt="my avatar"
-            className="cursor-pointer w-20 md:w-22 rounded-full ring-2 active:ring-white"
+            className="w-20 cursor-pointer rounded-full ring-2 active:ring-white md:w-22"
           />
-          <div className="flex flex-col">
-            <AnimateText
-              text="Hi, I'm Shazab Saifi"
-              className="text-2xl md:text-3xl font-semibold text-neutral-800 transition-colors duration-300 dark:text-white"
-            />
-            <AnimateText
-              text="20y/o developer & designer"
-              className="text-neutral-800 transition-colors duration-300 dark:text-white"
-            />
+          <div className="flex w-full flex-col">
+            <div className="flex w-full items-center justify-between">
+              <p className="text-2xl font-semibold text-neutral-800 transition-colors duration-300 md:text-3xl dark:text-white">
+                Hi, I&apos;m Shazab Saifi
+              </p>
+              <Badge
+                variant="info"
+                textShimmer={true}
+                baseColor="var(--color-blue-600)"
+                shimmerColor="var(--color-white)"
+                className="dark:bg-blue-900/50"
+              >
+                Available For Work
+              </Badge>
+            </div>
+            <p className="text-neutral-800 transition-colors duration-300 dark:text-white">
+              20y/o developer & designer
+            </p>
           </div>
         </div>
         <div className="mt-10 max-w-2xl">
-          <motion.div
-            initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-            whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-2 text-wrap text-neutral-800 transition-colors duration-300 dark:text-white"
-          >
+          <div className="space-y-2 text-wrap text-neutral-800 transition-colors duration-300 dark:text-white">
             <p className="text-wrap">
               Hi, I&apos;m Shazab Saifi, a passionate Design engineer. I can
               design user interfaces and turn them into real life products. I
@@ -51,11 +53,11 @@ const HeroSection = () => {
               Mostly you&apos;ll find me on
               <Link href="https://x.com/shazabsaifi_s9">𝕏</Link>
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection

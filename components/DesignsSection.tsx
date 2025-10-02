@@ -1,59 +1,60 @@
-"use client";
+'use client'
 
-import { motion } from "motion/react";
-import Image from "next/image";
-import Link from "next/link";
-import { LuExternalLink } from "react-icons/lu";
+import { motion } from 'motion/react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { LuExternalLink } from 'react-icons/lu'
 
 const DesignsSection = () => {
   const designs = [
     {
-      title: "Quartz UI",
-      image: "https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg",
+      title: 'Quartz UI',
+      image:
+        'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg',
       description:
-        "Quartz UI is a modern, animated UI library for Next.js. This is the design of Quartz UI, showcasing its sleek interface, smooth animations, and user-friendly component layouts.",
-      tools: ["Figma"],
-      url: "https://www.figma.com/design/TsWZVVg7UH1CDOJ38hjRKw/Quartz-UI?node-id=11-27&t=jhrggTPElatYN2E4-1",
+        'Quartz UI is a modern, animated UI library for Next.js. This is the design of Quartz UI, showcasing its sleek interface, smooth animations, and user-friendly component layouts.',
+      tools: ['Figma'],
+      url: 'https://www.figma.com/design/TsWZVVg7UH1CDOJ38hjRKw/Quartz-UI?node-id=11-27&t=jhrggTPElatYN2E4-1',
     },
     {
-      title: "Nova.ai",
-      image: "/Nova-ai.svg",
+      title: 'Nova.ai',
+      image: '/Nova-ai.svg',
       description:
-        "A modern AI interface inspired by ChatGPT, designed for seamless conversations and intuitive user experience.",
-      tools: ["Figma"],
-      url: "https://www.figma.com/design/hvNwf7J6iIB7gVu8rAvZN2/Nova.ai?node-id=0-1&t=fmxXdYDzM1K6Ful9-1",
+        'A modern AI interface inspired by ChatGPT, designed for seamless conversations and intuitive user experience.',
+      tools: ['Figma'],
+      url: 'https://www.figma.com/design/hvNwf7J6iIB7gVu8rAvZN2/Nova.ai?node-id=0-1&t=fmxXdYDzM1K6Ful9-1',
     },
     {
-      title: "Pixory",
-      image: "/pixoryIcon.png",
+      title: 'Pixory',
+      image: '/pixoryIcon.png',
       description:
-        "Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, user authentication, and personalized collections.",
-      tools: ["Figma"],
-      url: "https://www.figma.com/design/ZywBXSjZoAtpir4lxi64Wn/Pixory?node-id=27-556&t=znbjakOyl1fLSziP-1",
+        'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, user authentication, and personalized collections.',
+      tools: ['Figma'],
+      url: 'https://www.figma.com/design/ZywBXSjZoAtpir4lxi64Wn/Pixory?node-id=27-556&t=znbjakOyl1fLSziP-1',
     },
     {
-      title: "Petma",
-      image: "/petma.svg",
+      title: 'Petma',
+      image: '/petma.svg',
       description:
-        "Petma is a social media platform dedicated to pet lovers, where users can share photos, stories, and updates about their pets, connect with other pet owners, and discover a vibrant community centered around animals.",
-      tools: ["Figma"],
-      url: "https://www.figma.com/design/5NXdGUsZUXCxDE4ICIyUpv/Petma?node-id=36-12&t=1wKabOeGgvW1QtnT-1",
+        'Petma is a social media platform dedicated to pet lovers, where users can share photos, stories, and updates about their pets, connect with other pet owners, and discover a vibrant community centered around animals.',
+      tools: ['Figma'],
+      url: 'https://www.figma.com/design/5NXdGUsZUXCxDE4ICIyUpv/Petma?node-id=36-12&t=1wKabOeGgvW1QtnT-1',
     },
     {
-      title: "WireSketch",
-      image: "/wireSketch.svg",
+      title: 'WireSketch',
+      image: '/wireSketch.svg',
       description:
-        "WireSketch is a collaborative online whiteboard tool inspired by Excalidraw, allowing users to quickly sketch diagrams, wireframes, and ideas in real time with an intuitive, hand-drawn style interface.",
-      tools: ["Figma"],
-      url: "https://www.figma.com/design/ktXDLtIUlDb76tnnZaTATB/WireSketch?node-id=0-1&t=LGbKlmcn0NTgK0ZB-1",
+        'WireSketch is a collaborative online whiteboard tool inspired by Excalidraw, allowing users to quickly sketch diagrams, wireframes, and ideas in real time with an intuitive, hand-drawn style interface.',
+      tools: ['Figma'],
+      url: 'https://www.figma.com/design/ktXDLtIUlDb76tnnZaTATB/WireSketch?node-id=0-1&t=LGbKlmcn0NTgK0ZB-1',
     },
-  ];
+  ]
 
   return (
-    <div className="md:mt-16 mt-12 flex flex-col gap-4 md:gap-8">
+    <div className="mt-12 flex flex-col gap-4 md:mt-16 md:gap-8">
       <motion.h1
-        initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-        whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+        initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
+        whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.1 }}
         viewport={{ once: true }}
         className="text-2xl font-semibold text-neutral-800 transition-colors duration-300 dark:text-white"
@@ -63,8 +64,8 @@ const DesignsSection = () => {
       <div className="flex flex-col gap-6">
         {designs.map((design, idx) => (
           <motion.div
-            initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-            whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
+            whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
             transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
             key={idx}
@@ -81,7 +82,7 @@ const DesignsSection = () => {
               <div className="flex flex-1 flex-col">
                 <Link
                   href={design.url}
-                  className="flex w-fit items-center gap-2 group hover:underline"
+                  className="group flex w-fit items-center gap-2 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -112,7 +113,7 @@ const DesignsSection = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DesignsSection;
+export default DesignsSection
