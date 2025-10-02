@@ -17,7 +17,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <div className="my-16 flex w-full max-w-2xl flex-col gap-4">
+    <div className="mt-16 mb-26 flex w-full max-w-2xl flex-col gap-4">
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
