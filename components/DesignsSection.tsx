@@ -91,8 +91,7 @@ const DesignsSection = () => {
                   </h3>
                   <IconExternalLink
                     className="transition-opacity group-hover:opacity-100 md:opacity-0"
-                    size={20}
-                    stroke={1.5}
+                    size={18}
                   />
                 </Link>
                 <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">

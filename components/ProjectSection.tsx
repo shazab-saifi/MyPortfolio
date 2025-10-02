@@ -111,7 +111,10 @@ const ProjectSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <IconExternalLink className="transition-opacity group-hover:opacity-100 md:opacity-0" />
+                        <IconExternalLink
+                          size={18}
+                          className="transition-opacity group-hover:opacity-100 md:opacity-0"
+                        />
                       </a>
                     )}
                   </div>

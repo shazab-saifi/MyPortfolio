@@ -37,17 +37,17 @@ const LINKS: DockItem[] = [
   {
     title: 'Linkedin',
     icon: <IconBrandLinkedin className="h-full w-full" />,
-    href: '/',
+    href: 'https://www.linkedin.com/in/shazab-saifi-85a207338/',
   },
   {
     title: 'Twitter',
     icon: <IconBrandX className="h-full w-full" />,
-    href: '/twitter',
+    href: 'https://x.com/shazabsaifi_s9',
   },
   {
     title: 'Github',
     icon: <IconBrandGithub className="h-full w-full" />,
-    href: '/github',
+    href: 'https://github.com/shazab-saifi',
   },
   {
     title: 'Email',
