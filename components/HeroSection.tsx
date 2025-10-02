@@ -3,12 +3,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Badge from './Badge'
+import { motion } from 'motion/react'
 
 const HeroSection = () => {
   return (
     <main className="mt-16 max-w-full">
       <div className="flex w-fit flex-col">
-        <div className="flex items-center gap-4">
+        <motion.div
+          initial={{ opacity: 0, filter: 'blue(10px)', y: 10 }}
+          animate={{ opacity: 1, filter: 'blue(0px)', y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="flex items-center gap-4"
+        >
           <Image
             height={128}
             width={128}
@@ -26,7 +32,7 @@ const HeroSection = () => {
                 textShimmer={true}
                 baseColor="var(--color-blue-600)"
                 shimmerColor="var(--color-white)"
-                className="dark:bg-blue-900/50"
+                className="hidden sm:inline dark:bg-blue-900/50"
               >
                 Available For Work
               </Badge>
@@ -34,9 +40,23 @@ const HeroSection = () => {
             <p className="text-neutral-800 transition-colors duration-300 dark:text-white">
               20y/o developer & designer
             </p>
+            <Badge
+              variant="info"
+              textShimmer={true}
+              baseColor="var(--color-blue-600)"
+              shimmerColor="var(--color-white)"
+              className="mt-2 w-fit sm:hidden dark:bg-blue-900/50"
+            >
+              Available For Work
+            </Badge>
           </div>
-        </div>
-        <div className="mt-10 max-w-2xl">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, filter: 'blue(10px)', y: 10 }}
+          animate={{ opacity: 1, filter: 'blue(0px)', y: 0 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          className="mt-10 max-w-2xl"
+        >
           <div className="space-y-2 text-wrap text-neutral-800 transition-colors duration-300 dark:text-white">
             <p className="text-wrap">
               Hi, I&apos;m Shazab Saifi, a passionate Design engineer. I can
@@ -54,7 +74,7 @@ const HeroSection = () => {
               <Link href="https://x.com/shazabsaifi_s9">𝕏</Link>
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </main>
   )

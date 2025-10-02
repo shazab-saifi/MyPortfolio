@@ -1,9 +1,8 @@
 'use client'
 
-import { LuExternalLink } from 'react-icons/lu'
+import { IconExternalLink, IconBrandGithub } from '@tabler/icons-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
-import { SiGithub } from 'react-icons/si'
 import Badge from './Badge'
 
 const ProjectSection = () => {
@@ -61,7 +60,7 @@ const ProjectSection = () => {
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-        transition={{ duration: 0.3, delay: 0.3 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
         className="text-2xl font-semibold text-neutral-800 transition-colors duration-300 dark:text-white"
       >
@@ -72,7 +71,7 @@ const ProjectSection = () => {
           <motion.div
             initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 0.3, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             viewport={{ once: true }}
             key={idx}
             className="space-y-4"
@@ -112,7 +111,7 @@ const ProjectSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <LuExternalLink className="transition-opacity group-hover:opacity-100 md:opacity-0" />
+                        <IconExternalLink className="transition-opacity group-hover:opacity-100 md:opacity-0" />
                       </a>
                     )}
                   </div>
@@ -123,7 +122,7 @@ const ProjectSection = () => {
                       rel="noopener noreferrer"
                       className="flex w-fit items-center"
                     >
-                      <SiGithub className="text-neutral-800 transition-colors duration-300 sm:size-5 dark:text-white" />
+                      <IconBrandGithub className="text-neutral-800 transition-colors duration-300 sm:size-5 dark:text-white" />
                     </a>
                   )}
                 </div>

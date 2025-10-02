@@ -3,7 +3,7 @@
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { LuExternalLink } from 'react-icons/lu'
+import { IconExternalLink } from '@tabler/icons-react'
 
 const DesignsSection = () => {
   const designs = [
@@ -89,7 +89,11 @@ const DesignsSection = () => {
                   <h3 className="text-lg font-semibold text-neutral-800 transition-colors duration-300 dark:text-white">
                     {design.title}
                   </h3>
-                  <LuExternalLink className="transition-opacity group-hover:opacity-100 md:opacity-0" />
+                  <IconExternalLink
+                    className="transition-opacity group-hover:opacity-100 md:opacity-0"
+                    size={20}
+                    stroke={1.5}
+                  />
                 </Link>
                 <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
                   {design.description}
