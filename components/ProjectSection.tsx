@@ -1,13 +1,27 @@
 "use client";
 
-import Link from "next/link";
 import { LuExternalLink } from "react-icons/lu";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { SiGithub } from "react-icons/si";
+import Badge from "./Badge";
 
 const ProjectSection = () => {
   const projects = [
+    {
+      name: "Quartz UI",
+      image: "https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg",
+      description:
+        "Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.",
+      inDevelopment: true,
+      techStack: [
+        "React.js",
+        "Next.js",
+        "Tailwind.css",
+        "Motion.dev",
+        "Storybook.js"
+      ],
+    },
     {
       name: "Pixory",
       image: "/pixoryIcon.png",
@@ -42,7 +56,7 @@ const ProjectSection = () => {
   ];
 
   return (
-    <div className="mt-12 flex flex-col gap-4">
+    <div className="mt-12 md:mt-16 flex flex-col gap-4 md:gap-8">
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
@@ -62,7 +76,7 @@ const ProjectSection = () => {
             key={idx}
             className="space-y-4"
           >
-            <div className="group flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
               <Image
                 src={project.image}
                 alt={project.name}
@@ -72,25 +86,34 @@ const ProjectSection = () => {
               />
               <div className="flex flex-1 flex-col">
                 <div className="flex w-full flex-row justify-between sm:gap-0">
-                  <Link
-                    href={project.url}
-                    className="flex w-fit items-center gap-2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <div className="flex items-center gap-2 group hover:underline">
                     <h3 className="text-lg font-semibold text-neutral-800 transition-colors duration-300 dark:text-white">
                       {project.name}
                     </h3>
-                    <LuExternalLink className="transition-opacity group-hover:opacity-100 md:opacity-0" />
-                  </Link>
-                  <Link
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-fit items-center"
-                  >
-                    <SiGithub className="text-neutral-800 transition-colors duration-300 sm:size-5 dark:text-white" />
-                  </Link>
+                    {project.inDevelopment && (
+                      <Badge variant="warning">In Development</Badge>
+                    )}
+                    {project.url && (
+                      <a
+                        href={project.url}
+                        className="flex items-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <LuExternalLink className="transition-opacity group-hover:opacity-100 md:opacity-0" />
+                      </a>
+                    )}
+                  </div>
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex w-fit items-center"
+                    >
+                      <SiGithub className="text-neutral-800 transition-colors duration-300 sm:size-5 dark:text-white" />
+                    </a>
+                  )}
                 </div>
                 <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
                   {project.description}

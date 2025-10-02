@@ -8,6 +8,14 @@ import { LuExternalLink } from "react-icons/lu";
 const DesignsSection = () => {
   const designs = [
     {
+      title: "Quartz UI",
+      image: "https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg",
+      description:
+        "Quartz UI is a modern, animated UI library for Next.js. This is the design of Quartz UI, showcasing its sleek interface, smooth animations, and user-friendly component layouts.",
+      tools: ["Figma"],
+      url: "https://www.figma.com/design/TsWZVVg7UH1CDOJ38hjRKw/Quartz-UI?node-id=11-27&t=jhrggTPElatYN2E4-1",
+    },
+    {
       title: "Nova.ai",
       image: "/Nova-ai.svg",
       description:
@@ -42,7 +50,7 @@ const DesignsSection = () => {
   ];
 
   return (
-    <div className="mt-12 flex flex-col gap-4">
+    <div className="md:mt-16 mt-12 flex flex-col gap-4 md:gap-8">
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
         whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
@@ -73,7 +81,7 @@ const DesignsSection = () => {
               <div className="flex flex-1 flex-col">
                 <Link
                   href={design.url}
-                  className="flex w-fit items-center gap-2"
+                  className="flex w-fit items-center gap-2 group hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
