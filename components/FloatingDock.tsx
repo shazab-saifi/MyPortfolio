@@ -133,7 +133,7 @@ const FloatingDock = () => {
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
         className={cn(
-          'mx-auto flex h-16 w-fit items-center justify-center gap-4 rounded-full border border-neutral-200 bg-white/50 backdrop-blur-md p-4 shadow-md dark:border-neutral-800 dark:bg-neutral-950/50'
+          'mx-auto flex h-16 w-fit items-center justify-center gap-4 rounded-full border border-neutral-200 bg-white/50 backdrop-blur-md p-4 shadow-md dark:border-neutral-800 dark:bg-neutral-950/50 transition-colors duration-300'
         )}
       >
         {visibleLinks.map((el, idx) =>
@@ -234,7 +234,7 @@ function DockIcon({
         <motion.div
           ref={ref}
           style={{ width, height }}
-          className="relative flex items-center justify-center rounded-full bg-neutral-200 transition-colors dark:bg-neutral-800"
+          className="relative flex items-center justify-center rounded-full bg-neutral-200 transition-colors duration-300 dark:bg-neutral-800"
         >
           <AnimatePresence>
             {hovered && (
@@ -243,13 +243,13 @@ function DockIcon({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 2 }}
                 transition={{ duration: 0.2 }}
-                className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-neutral-200 px-2 py-0.5 text-xs whitespace-pre text-neutral-800 shadow-md dark:bg-neutral-900 dark:text-neutral-100"
+                className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-neutral-200 px-2 py-0.5 text-xs whitespace-pre text-neutral-800 shadow-md dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-300"
               >
                 {el.title}
               </motion.div>
             )}
           </AnimatePresence>
-          <motion.div style={{ width: widthIcon, height: heightIcon }} className='text-neutral-950 dark:text-neutral-100'>
+          <motion.div style={{ width: widthIcon, height: heightIcon }} className='text-neutral-950 dark:text-neutral-100 transition-colors duration-300'>
             {el.icon}
           </motion.div>
         </motion.div>
@@ -266,7 +266,7 @@ function DockIcon({
       <motion.div
         ref={ref}
         style={{ width, height }}
-        className="relative flex items-center justify-center rounded-full bg-neutral-200 transition-colors dark:bg-neutral-800"
+        className="relative flex items-center justify-center rounded-full bg-neutral-200 transition-colors duration-300 dark:bg-neutral-800"
       >
         <AnimatePresence>
           {hovered && (
@@ -275,13 +275,13 @@ function DockIcon({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 2 }}
               transition={{ duration: 0.2 }}
-              className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-neutral-200 px-2 py-0.5 text-xs whitespace-pre text-neutral-800 shadow-md dark:bg-neutral-900 dark:text-neutral-100"
+              className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-neutral-200 px-2 py-0.5 text-xs whitespace-pre text-neutral-800 shadow-md dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-300"
             >
               {el.title}
             </motion.div>
           )}
         </AnimatePresence>
-        <motion.div style={{ width: widthIcon, height: heightIcon }} className='text-neutral-950 dark:text-neutral-100'>
+        <motion.div style={{ width: widthIcon, height: heightIcon }} className='text-neutral-950 dark:text-neutral-100 transition-colors duration-300'>
           {el.icon}
         </motion.div>
       </motion.div>
@@ -356,7 +356,7 @@ function DockThemeIcon({
       <motion.div
         ref={ref}
         style={{ width, height }}
-        className="relative flex items-center justify-center rounded-full bg-neutral-200 transition-colors dark:bg-neutral-800"
+        className="relative flex items-center justify-center rounded-full bg-neutral-200 transition-colors duration-300 dark:bg-neutral-800"
       >
         <AnimatePresence>
           {hovered && (
@@ -365,13 +365,13 @@ function DockThemeIcon({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 2 }}
               transition={{ duration: 0.2 }}
-              className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-neutral-200 px-2 py-0.5 text-xs whitespace-pre text-neutral-800 shadow-md dark:bg-neutral-900 dark:text-neutral-100"
+              className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-neutral-200 px-2 py-0.5 text-xs whitespace-pre text-neutral-800 shadow-md dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-300"
             >
               {el.title}
             </motion.div>
           )}
         </AnimatePresence>
-        <motion.div style={{ width: widthIcon, height: heightIcon }} className='text-neutral-950 dark:text-neutral-100'>
+        <motion.div style={{ width: widthIcon, height: heightIcon }} className='text-neutral-950 dark:text-neutral-100 transition-colors duration-300'>
           {el.icon}
         </motion.div>
       </motion.div>

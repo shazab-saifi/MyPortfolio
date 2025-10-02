@@ -3,59 +3,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { SiGithub } from "react-icons/si";
 import AnimateText from "./AnimateText";
 
 const HeroSection = () => {
   return (
-    <main className="mt-16 max-w-full sm:mt-24">
+    <main className="mt-16 max-w-full ">
       <div className="flex w-fit flex-col">
-        <div className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:space-x-6">
-          <motion.div
-            initial={{ y: 30, opacity: 0, filter: "blur(10px)" }}
-            whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
-            className="w-32 sm:w-auto"
-          >
-            <Link href="https://github.com/shazab-saifi">
-              <Image
-                width={128}
-                height={128}
-                src="/stewie-music.jpeg"
-                alt="my avatar"
-                className="w-32 cursor-pointer rounded-2xl ring-2 active:ring-white sm:w-[200px]"
-              />
-            </Link>
-          </motion.div>
-          <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <Image
+            height={128}
+            width={128}
+            src="/stewie-music.jpeg"
+            alt="my avatar"
+            className="cursor-pointer w-20 md:w-22 rounded-full ring-2 active:ring-white"
+          />
+          <div className="flex flex-col">
             <AnimateText
               text="Hi, I'm Shazab Saifi"
-              className="text-3xl text-neutral-800 transition-colors duration-300 sm:text-4xl md:text-5xl dark:text-white"
+              className="text-2xl md:text-3xl font-semibold text-neutral-800 transition-colors duration-300 dark:text-white"
             />
             <AnimateText
               text="20y/o developer & designer"
-              className="text-xl text-neutral-800 transition-colors duration-300 sm:text-2xl dark:text-white"
+              className="text-neutral-800 transition-colors duration-300 dark:text-white"
             />
-            <motion.div
-              initial={{ y: 10, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 100 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="mt-4 flex space-x-4 text-neutral-800 transition-colors duration-300 dark:text-white"
-            >
-              <Link href="https://x.com/shazabsaifi_s9">
-                <FaSquareXTwitter size={24} className="cursor-pointer" />
-              </Link>
-              <Link href="https://www.instagram.com/shahzaibb.s/">
-                <FaSquareInstagram size={24} className="cursor-pointer" />
-              </Link>
-              <Link href="https://github.com/shazab-saifi">
-                <SiGithub size={24} className="cursor-pointer" />
-              </Link>
-            </motion.div>
           </div>
         </div>
         <div className="mt-10 max-w-2xl">
@@ -81,10 +51,6 @@ const HeroSection = () => {
               Mostly you&apos;ll find me on
               <Link href="https://x.com/shazabsaifi_s9">𝕏</Link>
             </p>
-            <div>
-              <span>Email — </span>
-              <span>shazabdev@gmail.com</span>
-            </div>
           </motion.div>
         </div>
       </div>
