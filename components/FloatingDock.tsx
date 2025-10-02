@@ -62,11 +62,11 @@ const LINKS: DockItem[] = [
   },
 ]
 
-function useIsMobile (breakpoint = 640) {
+const useIsMobile = (breakpoint = 640) => {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    function handleResize () {
+    const handleResize = () => {
       setIsMobile(window.innerWidth < breakpoint)
     }
     handleResize()
@@ -130,7 +130,12 @@ const FloatingDock = () => {
   }
 
   return (
-    <div className="fixed bottom-4 left-1/2 flex -translate-x-1/2 items-center justify-center">
+    <motion.div
+      initial={{ opacity: 0, filter: 'blue(10px)', y: 10 }}
+      animate={{ opacity: 1, filter: 'blue(0px)', y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed bottom-4 left-1/2 flex -translate-x-1/2 items-center justify-center"
+    >
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
@@ -170,11 +175,11 @@ const FloatingDock = () => {
           )
         )}
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
 
-function DockIcon ({
+const DockIcon = ({
   el,
   mouseX,
   isMobile,
@@ -194,7 +199,7 @@ function DockIcon ({
   maxItemSize: number
   baseIconSize: number
   maxIconSize: number
-}) {
+}) => {
   const ref = useRef<HTMLDivElement | null>(null)
   const [hovered, setHovered] = useState(false)
 
@@ -297,7 +302,7 @@ function DockIcon ({
   )
 }
 
-function DockThemeIcon ({
+const DockThemeIcon = ({
   el,
   mouseX,
   isMobile,
@@ -320,7 +325,7 @@ function DockThemeIcon ({
   maxIconSize: number
   isDark: boolean
   handleToggle: () => void
-}) {
+}) => {
   const ref = useRef<HTMLDivElement | null>(null)
   const [hovered, setHovered] = useState(false)
 
