@@ -7,7 +7,7 @@ const BackgroundGrid = () => {
     <div>
       <motion.div
         initial={{ opacity: 0, filter: 'blue(10px)' }}
-        animate={{ opacity: 1, filter: 'blue(0px)' }}
+        whileInView={{ opacity: 1, filter: 'blue(0px)' }}
         transition={{ duration: 1, delay: 1 }}
         className="fixed inset-0 top-0 z-0 hidden dark:inline"
         style={{
@@ -58,7 +58,7 @@ const BackgroundGrid = () => {
 
       <motion.div
         initial={{ opacity: 0, filter: 'blue(10px)' }}
-        animate={{ opacity: 1, filter: 'blue(0px)' }}
+        whileInView={{ opacity: 1, filter: 'blue(0px)' }}
         transition={{ duration: 1, delay: 1 }}
         className="fixed inset-0 top-0 z-0 dark:hidden"
         style={{

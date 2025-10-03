@@ -56,13 +56,13 @@ const ProjectSection = () => {
   ]
 
   return (
-    <div className="mt-12 flex flex-col gap-4 md:mt-16 md:gap-8">
+    <div className="mt-12 flex flex-col gap-6 md:mt-16 md:gap-8">
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-2xl font-semibold text-neutral-800 transition-colors duration-300 dark:text-white"
+        className="text-xl font-semibold text-neutral-800 transition-colors duration-300 md:text-2xl dark:text-white"
       >
         Projects —
       </motion.h1>
