@@ -1,6 +1,23 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
+::view-transition-old(root) {
+  animation-delay: 600ms;
+}
+
+::view-transition-new(root) {
+  animation: circle-in 600ms;
+}
+
+@keyframes circle-in {
+  from {
+    clip-path: circle(0 at 50% 0);
+  }
+  to {
+    clip-path: circle(140% at 50% 0);
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

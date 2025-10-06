@@ -83,6 +83,7 @@ const Dock = () => {
   const baseIconSize = 20;
   const [isDark, setIsDark] = useState(false);
   const [playPop] = useSound('/pop.mp3');
+  const [playPops] = useSound('/pop!.mp3');
 
   useEffect(() => {
     const stored = localStorage.getItem('dark');
@@ -97,10 +98,29 @@ const Dock = () => {
 
   const handleToggle = () => {
     const next = !isDark;
-    document.documentElement.classList.toggle('dark', next);
-    localStorage.setItem('dark', JSON.stringify(next));
-    playPop();
-    setIsDark(next);
+
+    if (!document.startViewTransition) {
+      document.documentElement.classList.toggle('dark', next);
+      localStorage.setItem('dark', JSON.stringify(next));
+      setIsDark(next);
+      if (next) {
+        playPops();
+      } else {
+        playPop();
+      }
+      return;
+    }
+
+    document.startViewTransition(() => {
+      document.documentElement.classList.toggle('dark', next);
+      localStorage.setItem('dark', JSON.stringify(next));
+      setIsDark(next);
+      if (next) {
+        playPops();
+      } else {
+        playPop();
+      }
+    });
   };
 
   return (
