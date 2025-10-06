@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {
   IconBrandX,
@@ -6,25 +6,26 @@ import {
   IconBrandLinkedin,
   IconMail,
   IconSun,
-} from '@tabler/icons-react'
-import { AnimatePresence, motion } from 'motion/react'
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import { cn } from '@/lib/utils'
+} from '@tabler/icons-react';
+import { AnimatePresence, motion } from 'motion/react';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
+import useSound from 'use-sound';
 
 type DockLink = {
-  title: string
-  icon: React.ReactNode
-  href: string
-  isTheme?: false
-  isEmail?: boolean
-}
+  title: string;
+  icon: React.ReactNode;
+  href: string;
+  isTheme?: false;
+  isEmail?: boolean;
+};
 type DockTheme = {
-  title: string
-  icon: React.ReactNode
-  isTheme: true
-}
-type DockItem = DockLink | DockTheme
+  title: string;
+  icon: React.ReactNode;
+  isTheme: true;
+};
+type DockItem = DockLink | DockTheme;
 
 /* ------------------------- Data ------------------------- */
 const LINKS: DockItem[] = [
@@ -54,51 +55,53 @@ const LINKS: DockItem[] = [
     icon: <IconSun className="h-full w-full" />,
     isTheme: true,
   },
-]
+];
 
 const useIsMobile = (breakpoint = 640) => {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < breakpoint)
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [breakpoint])
+    const handleResize = () => setIsMobile(window.innerWidth < breakpoint);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [breakpoint]);
 
-  return isMobile
-}
+  return isMobile;
+};
 
 const tooltipVariants = {
   hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: 10 },
-}
+};
 
 const Dock = () => {
-  const isMobile = useIsMobile()
-  const visibleLinks = isMobile ? LINKS.slice(0, 5) : LINKS
-  const baseItemSize = 40
-  const baseIconSize = 20
-  const [isDark, setIsDark] = useState(false)
+  const isMobile = useIsMobile();
+  const visibleLinks = isMobile ? LINKS.slice(0, 5) : LINKS;
+  const baseItemSize = 40;
+  const baseIconSize = 20;
+  const [isDark, setIsDark] = useState(false);
+  const [playPop] = useSound('/pop.mp3');
 
   useEffect(() => {
-    const stored = localStorage.getItem('dark')
+    const stored = localStorage.getItem('dark');
     const prefersDark = window.matchMedia(
       '(prefers-color-scheme: dark)'
-    ).matches
-    const shouldBeDark = stored ? JSON.parse(stored) : prefersDark
+    ).matches;
+    const shouldBeDark = stored ? JSON.parse(stored) : prefersDark;
 
-    document.documentElement.classList.toggle('dark', shouldBeDark)
-    setIsDark(shouldBeDark)
-  }, [])
+    document.documentElement.classList.toggle('dark', shouldBeDark);
+    setIsDark(shouldBeDark);
+  }, []);
 
   const handleToggle = () => {
-    const next = !isDark
-    document.documentElement.classList.toggle('dark', next)
-    localStorage.setItem('dark', JSON.stringify(next))
-    setIsDark(next)
-  }
+    const next = !isDark;
+    document.documentElement.classList.toggle('dark', next);
+    localStorage.setItem('dark', JSON.stringify(next));
+    playPop();
+    setIsDark(next);
+  };
 
   return (
     <div className="fixed bottom-4 left-1/2 flex -translate-x-1/2 items-center justify-center">
@@ -127,23 +130,23 @@ const Dock = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const DockIcon = ({
   el,
   baseItemSize,
   baseIconSize,
 }: {
-  el: DockLink
-  baseItemSize: number
-  baseIconSize: number
+  el: DockLink;
+  baseItemSize: number;
+  baseIconSize: number;
 }) => {
-  const [hovered, setHovered] = useState(false)
-  const Wrapper = el.isEmail ? 'a' : Link
+  const [hovered, setHovered] = useState(false);
+  const Wrapper = el.isEmail ? 'a' : Link;
   const props = el.isEmail
     ? { href: el.href, target: '_blank', rel: 'noopener noreferrer' }
-    : { href: el.href }
+    : { href: el.href };
 
   return (
     <Wrapper
@@ -177,8 +180,8 @@ const DockIcon = ({
         </div>
       </div>
     </Wrapper>
-  )
-}
+  );
+};
 
 const DockThemeIcon = ({
   el,
@@ -186,12 +189,12 @@ const DockThemeIcon = ({
   baseIconSize,
   handleToggle,
 }: {
-  el: DockTheme
-  baseItemSize: number
-  baseIconSize: number
-  handleToggle: () => void
+  el: DockTheme;
+  baseItemSize: number;
+  baseIconSize: number;
+  handleToggle: () => void;
 }) => {
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState(false);
 
   return (
     <button
@@ -228,7 +231,7 @@ const DockThemeIcon = ({
         </div>
       </div>
     </button>
-  )
-}
+  );
+};
 
-export default Dock
+export default Dock;

@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { motion } from 'motion/react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { IconExternalLink } from '@tabler/icons-react'
+import { motion } from 'motion/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { IconExternalLink } from '@tabler/icons-react';
 
 const DesignsSection = () => {
   const designs = [
@@ -48,7 +48,7 @@ const DesignsSection = () => {
       tools: ['Figma'],
       url: 'https://www.figma.com/design/ktXDLtIUlDb76tnnZaTATB/WireSketch?node-id=0-1&t=LGbKlmcn0NTgK0ZB-1',
     },
-  ]
+  ];
 
   return (
     <div className="mt-12 flex flex-col gap-6 md:mt-16 md:gap-8">
@@ -57,7 +57,7 @@ const DesignsSection = () => {
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.1 }}
         viewport={{ once: true }}
-        className="text-xl font-semibold text-neutral-800 transition-colors duration-300 md:text-2xl dark:text-white"
+        className="text-xl font-semibold text-neutral-800 md:text-2xl dark:text-white"
       >
         Designs —
       </motion.h1>
@@ -86,7 +86,7 @@ const DesignsSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h3 className="text-lg font-semibold text-neutral-800 transition-colors duration-300 dark:text-white">
+                  <h3 className="text-lg font-semibold text-neutral-800 dark:text-white">
                     {design.title}
                   </h3>
                   <IconExternalLink
@@ -94,14 +94,14 @@ const DesignsSection = () => {
                     size={18}
                   />
                 </Link>
-                <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
+                <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 sm:text-base dark:text-neutral-400">
                   {design.description}
                 </p>
                 <div className="mt-2 flex flex-wrap items-center gap-2">
-                  <h3 className="text-sm font-semibold text-neutral-800 transition-colors duration-300 sm:text-base dark:text-white">
+                  <h3 className="text-sm font-semibold text-neutral-800 sm:text-base dark:text-white">
                     Design Tool:
                   </h3>
-                  <div className="flex gap-2 text-sm text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
+                  <div className="flex gap-2 text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
                     {design.tools.map((item, idx) => (
                       <span key={idx}>{item}</span>
                     ))}
@@ -110,13 +110,13 @@ const DesignsSection = () => {
               </div>
             </div>
             {!(designs.length - 1 === idx) && (
-              <div className="mt-4 h-[1px] w-full bg-neutral-300 transition-colors duration-300 sm:mt-6 dark:bg-neutral-800"></div>
+              <div className="mt-4 h-[1px] w-full bg-neutral-300 sm:mt-6 dark:bg-neutral-800"></div>
             )}
           </motion.div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DesignsSection
+export default DesignsSection;

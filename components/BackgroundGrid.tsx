@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { motion } from 'motion/react'
+import { motion } from 'motion/react';
 
 const BackgroundGrid = () => {
   return (
@@ -107,7 +107,7 @@ const BackgroundGrid = () => {
         }}
       />
     </div>
-  )
-}
+  );
+};
 
-export default BackgroundGrid
+export default BackgroundGrid;

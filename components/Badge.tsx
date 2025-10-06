@@ -1,6 +1,6 @@
-import React from 'react'
-import { cn } from '@/lib/utils'
-import TextShimmer from './TextShimmer'
+import React from 'react';
+import { cn } from '@/lib/utils';
+import TextShimmer from './TextShimmer';
 
 export type BadgeVariant =
   | 'default'
@@ -8,14 +8,14 @@ export type BadgeVariant =
   | 'warning'
   | 'danger'
   | 'info'
-  | 'outline'
+  | 'outline';
 
 interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: BadgeVariant
-  children: React.ReactNode
-  textShimmer?: boolean
-  baseColor?: string
-  shimmerColor?: string
+  variant?: BadgeVariant;
+  children: React.ReactNode;
+  textShimmer?: boolean;
+  baseColor?: string;
+  shimmerColor?: string;
 }
 
 const badgeVariants: Record<BadgeVariant, string> = {
@@ -30,7 +30,7 @@ const badgeVariants: Record<BadgeVariant, string> = {
   info: 'bg-blue-100 text-blue-800 border border-blue-200 dark:bg-blue-900 dark:text-blue-200 dark:border-blue-800',
   outline:
     'bg-transparent text-neutral-800 border border-neutral-300 dark:text-neutral-100 dark:border-neutral-700',
-}
+};
 
 const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
   (
@@ -49,7 +49,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
       <div
         ref={ref}
         className={cn(
-          'inline-flex items-center rounded px-2 py-0.5 text-xs font-semibold transition-colors duration-300',
+          'inline-flex items-center rounded px-2 py-0.5 text-xs font-semibold',
           badgeVariants[variant],
           className
         )}
@@ -63,10 +63,10 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
           children
         )}
       </div>
-    )
+    );
   }
-)
+);
 
-Badge.displayName = 'Badge'
+Badge.displayName = 'Badge';
 
-export default Badge
+export default Badge;

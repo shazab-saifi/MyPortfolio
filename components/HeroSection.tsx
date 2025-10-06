@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import Link from 'next/link'
-import Badge from './Badge'
-import { motion } from 'motion/react'
+import Image from 'next/image';
+import Link from 'next/link';
+import Badge from './Badge';
+import { motion } from 'motion/react';
 
 const HeroSection = () => {
   return (
@@ -24,7 +24,7 @@ const HeroSection = () => {
           />
           <div className="flex w-full flex-col">
             <div className="flex w-full items-center justify-between">
-              <p className="text-2xl font-semibold text-neutral-800 transition-colors duration-300 md:text-3xl dark:text-white">
+              <p className="text-2xl font-semibold text-neutral-800 md:text-3xl dark:text-white">
                 Hi, I&apos;m Shazab Saifi
               </p>
               <Badge
@@ -37,7 +37,7 @@ const HeroSection = () => {
                 Available For Work
               </Badge>
             </div>
-            <p className="text-neutral-800 transition-colors duration-300 dark:text-white">
+            <p className="text-neutral-800 dark:text-white">
               20y/o developer & designer
             </p>
             <Badge
@@ -57,7 +57,7 @@ const HeroSection = () => {
           transition={{ duration: 0.3, delay: 0.1 }}
           className="mt-10 max-w-2xl"
         >
-          <div className="space-y-2 text-wrap text-neutral-800 transition-colors duration-300 dark:text-white">
+          <div className="space-y-2 text-wrap text-neutral-800 dark:text-white">
             <p className="text-wrap">
               Hi, I&apos;m Shazab Saifi, a passionate Design engineer. I can
               design user interfaces and turn them into real life products. I
@@ -77,7 +77,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

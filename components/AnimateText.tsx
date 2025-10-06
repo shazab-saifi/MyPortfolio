@@ -1,11 +1,11 @@
-import { motion } from 'motion/react'
+import { motion } from 'motion/react';
 
 const AnimateText = ({
   text,
   className,
 }: {
-  text: string
-  className: string
+  text: string;
+  className: string;
 }) => {
   return (
     <div className="inline-flex flex-wrap">
@@ -22,7 +22,7 @@ const AnimateText = ({
         </motion.span>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default AnimateText
+export default AnimateText;

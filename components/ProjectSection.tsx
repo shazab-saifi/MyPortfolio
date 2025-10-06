@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { IconExternalLink, IconBrandGithub } from '@tabler/icons-react'
-import { motion } from 'motion/react'
-import Image from 'next/image'
-import Badge from './Badge'
+import { IconExternalLink, IconBrandGithub } from '@tabler/icons-react';
+import { motion } from 'motion/react';
+import Image from 'next/image';
+import Badge from './Badge';
 
 const ProjectSection = () => {
   const projects = [
@@ -53,7 +53,7 @@ const ProjectSection = () => {
         'Supabase realtime db',
       ],
     },
-  ]
+  ];
 
   return (
     <div className="mt-12 flex flex-col gap-6 md:mt-16 md:gap-8">
@@ -62,7 +62,7 @@ const ProjectSection = () => {
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-xl font-semibold text-neutral-800 transition-colors duration-300 md:text-2xl dark:text-white"
+        className="text-xl font-semibold text-neutral-800 md:text-2xl dark:text-white"
       >
         Projects —
       </motion.h1>
@@ -93,7 +93,7 @@ const ProjectSection = () => {
                         : 'cursor-pointer hover:underline'
                     }`}
                   >
-                    <h3 className="text-lg font-semibold text-neutral-800 transition-colors duration-300 dark:text-white">
+                    <h3 className="text-lg font-semibold text-neutral-800 dark:text-white">
                       {project.name}
                     </h3>
                     {project.inDevelopment && (
@@ -125,18 +125,18 @@ const ProjectSection = () => {
                       rel="noopener noreferrer"
                       className="flex w-fit items-center"
                     >
-                      <IconBrandGithub className="text-neutral-800 transition-colors duration-300 sm:size-5 dark:text-white" />
+                      <IconBrandGithub className="text-neutral-800 sm:size-5 dark:text-white" />
                     </a>
                   )}
                 </div>
-                <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
+                <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 sm:text-base dark:text-neutral-400">
                   {project.description}
                 </p>
                 <div className="mt-4 flex flex-col flex-wrap gap-1 sm:flex-row sm:gap-2">
-                  <h3 className="text-sm font-semibold text-neutral-800 transition-colors duration-300 sm:text-base dark:text-white">
+                  <h3 className="text-sm font-semibold text-neutral-800 sm:text-base dark:text-white">
                     Tech Stack:
                   </h3>
-                  <div className="flex max-w-full flex-wrap space-x-2 text-sm text-neutral-600 transition-colors duration-300 sm:text-base dark:text-neutral-400">
+                  <div className="flex max-w-full flex-wrap space-x-2 text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
                     {project.techStack.map((item, idx) => (
                       <span key={idx}>
                         {item}
@@ -148,13 +148,13 @@ const ProjectSection = () => {
               </div>
             </div>
             {!(projects.length - 1 === idx) && (
-              <div className="h-[1px] w-full bg-neutral-300 transition-colors duration-300 dark:bg-neutral-800"></div>
+              <div className="h-[1px] w-full bg-neutral-300 dark:bg-neutral-800"></div>
             )}
           </motion.div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectSection
+export default ProjectSection;
