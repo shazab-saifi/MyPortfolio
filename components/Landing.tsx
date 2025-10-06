@@ -2,7 +2,7 @@ import HeroSection from './HeroSection'
 import ProjectSection from './ProjectSection'
 import DesignsSection from './DesignsSection'
 import SkillsSection from './SkillsSection'
-import FloatingDock from './FloatingDock'
+import Dock from './Dock'
 import BackgroundGrid from './BackgroundGrid'
 
 const Landing = () => {
@@ -14,7 +14,7 @@ const Landing = () => {
         <ProjectSection />
         <DesignsSection />
         <SkillsSection />
-        <FloatingDock />
+        <Dock />
       </div>
     </div>
   )
