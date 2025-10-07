@@ -82,8 +82,8 @@ const Dock = () => {
   const baseItemSize = 40;
   const baseIconSize = 20;
   const [isDark, setIsDark] = useState(false);
-  const [playPop] = useSound('/pop.mp3');
-  const [playPops] = useSound('/pop!.mp3');
+  const [playPop] = useSound('/pop.mp3', { volume: 0.2 });
+  const [playPops] = useSound('/pop!.mp3', { volume: 0.2 });
 
   useEffect(() => {
     const stored = localStorage.getItem('dark');
