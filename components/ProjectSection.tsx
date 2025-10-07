@@ -27,7 +27,7 @@ const ProjectSection = () => {
       image: '/pixoryIcon.png',
       description:
         'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, user authentication, and personalized collections.',
-      url: 'https://pixory-liard.vercel.app',
+      url: 'https://pixory.shazab.site',
       githubLink: 'https://github.com/shazab-saifi/Pixory',
       techStack: [
         'React.js',
@@ -44,7 +44,7 @@ const ProjectSection = () => {
       image: '/periskopeLogo.png',
       description:
         'A real-time group chat app built for a Periskope internship assignment. Users can create rooms and chat instantly.',
-      url: 'https://periskopeassignment.vercel.app',
+      url: 'https://periskope.shazab.site',
       githubLink: 'https://github.com/shazab-saifi/periskopeassignment',
       techStack: [
         'React.js',
